@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kelurahan">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/title_bar"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelurahan Parepare"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="@+id/title_bar"
+        app:layout_constraintStart_toStartOf="@id/title_bar"
+        app:layout_constraintTop_toTopOf="@id/title_bar"
+        android:id="@+id/tv_kelurahan"
+        android:paddingTop="8dp"
+        />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:id="@+id/pb_kelurahan"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title_bar"
+            android:id="@+id/rv_list"
+            tools:listitem="@layout/item_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/background_navigation"
+            app:itemIconTint="@android:color/white"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:itemRippleColor="@android:color/white"
+            app:itemTextColor="@android:color/white"
+            app:layout_insetEdge="bottom"
+            app:menu="@menu/bottom_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
