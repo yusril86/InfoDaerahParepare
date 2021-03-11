@@ -11,6 +11,7 @@ import com.pareandroid.infodaerahparepare.Kecamatan
 import com.pareandroid.infodaerahparepare.Kelurahan
 import com.pareandroid.infodaerahparepare.Model.KecamatanItem
 import com.pareandroid.infodaerahparepare.R
+import kotlinx.android.synthetic.main.item_list.view.*
 
 class KecamanAdapter(private val listData : List<KecamatanItem>) : RecyclerView.Adapter<KecamanAdapter.itemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemViewHolder {
@@ -26,7 +27,8 @@ class KecamanAdapter(private val listData : List<KecamatanItem>) : RecyclerView.
     override fun onBindViewHolder(holder: itemViewHolder, position: Int) {
         val kecamatan = listData[position]
 
-        holder.nama.text = kecamatan.nama
+        holder.itemView.tv_namaKelurahan.text = kecamatan.nama
+
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, Kelurahan::class.java)
             intent.putExtra("idKecamatan",kecamatan.id)
@@ -36,6 +38,6 @@ class KecamanAdapter(private val listData : List<KecamatanItem>) : RecyclerView.
     }
 
     inner class itemViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView){
-        var  nama : TextView  = itemView.findViewById<TextView>(R.id.tv_namaKelurahan)
+//        var  nama : TextView  = itemView.findViewById<TextView>(R.id.tv_namaKelurahan)
     }
 }

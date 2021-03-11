@@ -7,7 +7,7 @@
         android:title="Daerah" />
 
     <item
-        android:id="@+id/summaryIdnMenu"
+        android:id="@+id/profil"
         android:icon="@drawable/ic_person_black"
         android:title="Profil" />
 

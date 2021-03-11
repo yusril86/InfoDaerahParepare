@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pareandroid.infodaerahparepare.fragment.About
 import com.pareandroid.infodaerahparepare.fragment.FrgamentKecamatan
 import com.pareandroid.infodaerahparepare.fragment.Main
 
@@ -39,6 +40,14 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
                     .commit()
                 return true
             }
+            R.id.profil ->{
+            val fragmentTwo = About()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.flMain,fragmentTwo)
+                    .commit()
+                return true
+        }
 
         }
         return false

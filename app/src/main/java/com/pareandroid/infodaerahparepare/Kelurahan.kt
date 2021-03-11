@@ -18,6 +18,7 @@ import com.pareandroid.infodaerahparepare.Model.KelurahanItem
 import com.pareandroid.infodaerahparepare.Model.KelurahanOnresponse
 import com.pareandroid.infodaerahparepare.Presenter.PresenterKelurahan
 import com.pareandroid.infodaerahparepare.View.ViewKelurahan
+import com.pareandroid.infodaerahparepare.fragment.About
 import com.pareandroid.infodaerahparepare.fragment.FrgamentKecamatan
 import kotlinx.android.synthetic.main.activity_kelurahan.*
 
@@ -40,7 +41,10 @@ class Kelurahan : AppCompatActivity(),ViewKelurahan,BottomNavigationView.OnNavig
         presenter.filterkelura(id)
 
         tv_kelurahan.setText(kecamatan)
-        bottomNav.setOnNavigationItemSelectedListener  (this)
+
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNavigationView.setOnNavigationItemSelectedListener(this)
 
     }
 
@@ -70,6 +74,11 @@ class Kelurahan : AppCompatActivity(),ViewKelurahan,BottomNavigationView.OnNavig
                 startActivity(intent)
                 return true
             }
+            /*R.id.profil->{
+                val intent = Intent(this,About::class.java)
+                startActivity(intent)
+                return true
+            }*/
 
         }
         return false
